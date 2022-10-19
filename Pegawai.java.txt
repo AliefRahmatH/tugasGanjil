@@ -1,0 +1,30 @@
+import java.text.DecimalFormat;
+ 
+
+public class Pegawai {
+
+        String nik, nama, bagian;
+        double gaji_pokok;
+        
+        double getGajiPokok(){
+            if(bagian == "Keuangan"){
+                gaji_pokok = 12000;
+            }else if(bagian == "Produksi"){
+                gaji_pokok = 11000;
+            }else{
+                gaji_pokok = 10000;
+            }
+            return gaji_pokok;
+            
+        }
+        void cetak(){
+            DecimalFormat df = new DecimalFormat("##0,000");
+            
+            System.out.println("----- Detail Pegawai ----");
+            System.out.println("No: "+this.nik);
+            System.out.println("Nama :"+this.nama);
+            System.out.println("Bagian: "+this.bagian);
+            System.out.println("Gaji Pokok: "+ df.format(getGajiPokok()));
+    }
+
+}
